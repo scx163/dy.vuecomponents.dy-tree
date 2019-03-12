@@ -1,12 +1,7 @@
 <template>
     <div class="wrapper">
-
         <!-- top navbar-->
         <Header />
-
-        <!-- sidebar-->
-        <!-- <Sidebar /> -->
-
         <!-- Main section-->
         <section class="section-container">
             <!-- Page content-->
@@ -17,17 +12,22 @@
 
 <script>
     import Header from './Header'
-    // import Sidebar from './Sidebar'
-    // import Offsidebar from './Offsidebar'
-    // import Footer from './Footer'
-
+    import { mapMutations } from 'vuex'
     export default {
       name: 'Layout',
       components: {
         Header
-        // Sidebar,
-        // Offsidebar,
-        // Footer
+      },
+      created() {
+        this.changeSetting({ name: 'horizontal', value: true })
+      },
+      destroyed() {
+        this.changeSetting({ name: 'horizontal', value: false })
+      },
+      methods: {
+        ...mapMutations([
+          'changeSetting'
+        ])
       }
     }
 </script>

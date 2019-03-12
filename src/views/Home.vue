@@ -1,15 +1,15 @@
 <template>
     <div class="container">
-      <div class="row">
-        <div class="col-md-6">
+      <dy-row>
+        <dy-col :span="12">
           <vue-tree
             :tree-data="treeData"
             v-model="ids"
             :options="options"
             @handle="handle"
           />
-        </div>
-        <div class="col-md-6">
+        </dy-col>
+        <dy-col :span="12">
           <p class="lead">设置</p>
           <div class="form-group">
             <div class="checkbox">
@@ -44,8 +44,8 @@
           <p>{{ids}}</p>
           <h3>Options</h3>
           <p>{{options}}</p>
-        </div>
-      </div>
+        </dy-col>
+      </dy-row>
     </div>
 </template>
 
