@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+<ContentWrapper>
+  <div class="container">
       <dy-row>
         <dy-col :span="12">
           <vue-tree
@@ -47,6 +48,7 @@
         </dy-col>
       </dy-row>
     </div>
+</ContentWrapper>
 </template>
 
 <script>

@@ -11,23 +11,27 @@
 </template>
 
 <script>
-    import Header from './Header'
-    import { mapMutations } from 'vuex'
-    export default {
-      name: 'Layout',
-      components: {
-        Header
-      },
-      created() {
-        this.changeSetting({ name: 'horizontal', value: true })
-      },
-      destroyed() {
-        this.changeSetting({ name: 'horizontal', value: false })
-      },
-      methods: {
-        ...mapMutations([
-          'changeSetting'
-        ])
-      }
-    }
+import Vue from 'vue'
+import Header from './Header'
+import { mapMutations } from 'vuex'
+import ContentWrapper from './ContentWrapper'
+
+Vue.component('ContentWrapper', ContentWrapper)
+export default {
+  name: 'Layout',
+  components: {
+    Header
+  },
+  created() {
+    this.changeSetting({ name: 'horizontal', value: true })
+  },
+  destroyed() {
+    this.changeSetting({ name: 'horizontal', value: false })
+  },
+  methods: {
+    ...mapMutations([
+      'changeSetting'
+    ])
+  }
+}
 </script>
